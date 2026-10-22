@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Manual {
+  id                 String   @id @default(cuid())
+  genericName        String
+  tradeName          String   @default("")
+  pinyin             String   @default("")
+  pinyinInitials     String   @default("")
+  manufacturer       String
+  approvalNumber     String   @unique
+  specification      String   @default("")
+  dosageForm         String   @default("")
+  indications        String   @default("")
+  dosage             String   @default("")
+  pediatric          String   @default("")
+  contraindications  String   @default("")
+  adverseReactions   String   @default("")
+  precautions        String   @default("")
+  interactions       String   @default("")
+  pregnancy          String   @default("")
+  geriatric          String   @default("")
+  storage            String   @default("")
+  sourceName         String   @default("")
+  sourceUrl          String   @default("")
+  revisionDate       String   @default("")
+  reviewedBy         String   @default("")
+  reviewedAt         String   @default("")
+  isDemo             Boolean  @default(false)
+  status             String   @default("draft")
+  version            Int      @default(1)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  @@index([genericName])
+  @@index([manufacturer])
+  @@index([status])
+}

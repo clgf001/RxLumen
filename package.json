@@ -1,0 +1,48 @@
+{
+  "name": "rxlumen",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "AGPL-3.0-only",
+  "engines": { "node": ">=22.12.0" },
+  "overrides": { "deepmerge-ts": "8.0.0" },
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "dev": "concurrently -k -n api,web \"tsx watch server/src/index.ts\" \"vite --config client/vite.config.ts\"",
+    "db:generate": "prisma generate",
+    "db:deploy": "node scripts/migrate.mjs",
+    "build": "npm run db:generate && tsc -p server/tsconfig.json && vite build --config client/vite.config.ts",
+    "typecheck": "tsc -p server/tsconfig.json --noEmit && tsc -p client/tsconfig.json",
+    "start": "node dist/server/src/index.js",
+    "test": "node scripts/test.mjs",
+    "smoke": "node scripts/test.mjs --production",
+    "licenses": "node scripts/licenses.mjs"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^6.1.0",
+    "@prisma/client": "6.19.3",
+    "antd": "^6.0.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.2.1",
+    "helmet": "^8.1.0",
+    "pinyin-pro": "^3.27.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.5",
+    "@types/node": "^22.19.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@types/supertest": "^6.0.3",
+    "@vitejs/plugin-react": "^5.1.0",
+    "concurrently": "^9.2.1",
+    "prisma": "6.19.3",
+    "supertest": "^7.1.4",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.0"
+  }
+}

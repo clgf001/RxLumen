@@ -1,0 +1,19 @@
+services:
+  rxlumen:
+    build: .
+    ports:
+      - "127.0.0.1:3000:3000"
+    environment:
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Run npm run setup first or set ADMIN_PASSWORD}
+      APP_ORIGIN: ${DEPLOY_ORIGIN:-http://localhost:3000}
+      COOKIE_SECURE: ${DEPLOY_COOKIE_SECURE:-false}
+    volumes:
+      - rxlumen-data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://localhost:3000/api/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+volumes:
+  rxlumen-data:

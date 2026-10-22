@@ -1,0 +1,38 @@
+[
+  {
+    "genericName": "【虚构演示】星屿占位片",
+    "tradeName": "演示星屿",
+    "manufacturer": "虚构样例工坊（并非真实药企）",
+    "approvalNumber": "DEMO-ONLY-001",
+    "specification": "无真实规格",
+    "dosageForm": "虚构占位剂型",
+    "indications": "演示占位文本。此条目不对应任何真实药品，不描述真实适应症。",
+    "dosage": "演示占位文本。无真实用法或剂量，不得用于用药。",
+    "pediatric": "演示占位文本。不提供儿童用药信息。",
+    "contraindications": "演示占位文本。不提供真实禁忌信息。",
+    "adverseReactions": "演示占位文本。不提供真实不良反应信息。",
+    "precautions": "演示占位文本。仅供软件功能展示，不可用于临床。",
+    "interactions": "演示占位文本。不提供真实相互作用信息。",
+    "pregnancy": "演示占位文本。不提供孕哺期用药信息。",
+    "geriatric": "演示占位文本。不提供老年用药信息。",
+    "storage": "演示占位文本。不提供真实贮藏要求。",
+    "sourceName": "RxLumen 人工编写的纯虚构界面测试样例",
+    "sourceUrl": "",
+    "revisionDate": "",
+    "reviewedBy": "演示占位身份（非药师复核）",
+    "reviewedAt": "",
+    "isDemo": true,
+    "status": "published"
+  },
+  {
+    "genericName": "【虚构演示】云舟占位胶囊",
+    "tradeName": "演示云舟",
+    "manufacturer": "虚构云舟样例工坊（并非真实药企）",
+    "approvalNumber": "DEMO-ONLY-002",
+    "indications": "完全虚构的页面占位内容，无真实药学含义。",
+    "dosage": "完全虚构的页面占位内容，不存在真实用法用量。",
+    "sourceName": "RxLumen 纯虚构测试样例",
+    "isDemo": true,
+    "status": "published"
+  }
+]
